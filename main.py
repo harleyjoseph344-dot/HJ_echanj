@@ -17,6 +17,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
       - run: pip install flet flet-cli requests
       - run: flet build apk
       - uses: actions/upload-artifact@v4
