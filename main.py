@@ -19,8 +19,9 @@ jobs:
           python-version: '3.12'
       - uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.27.4'
           channel: 'stable'
-      - run: pip install -r requirements.txt
+      - run: pip install "flet[all]" requests
       - run: flet build apk
       - uses: actions/upload-artifact@v4
         with:
